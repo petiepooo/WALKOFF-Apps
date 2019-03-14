@@ -44,7 +44,7 @@ def status(verbose=False):
 
 @action
 def allow(port, from_address='any', to_address='any', protocol='any', comment=None):
-    command = (['ufw', 'allow', 'from', from_address, 'to', to_address, 'port', port, 'proto', protocol])
+    command = ['ufw', 'allow', 'from', from_address, 'to', to_address, 'port', port, 'proto', protocol]
     if comment:
         command.extend(['comment', comment])
     return execute_command(command)
